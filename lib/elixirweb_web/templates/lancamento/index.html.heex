@@ -1,0 +1,30 @@
+<h1>Acompanhe seus lançamento</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo:</th>
+      <th>Descrição:</th>
+      <th>Valor (R$)</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for lancamento <- @lancamento do %>
+    <tr>
+      <td><%= lancamento.tipo %></td>
+      <td><%= lancamento.descricao %></td>
+      <td><%= lancamento.valor %></td>
+
+      <td>
+        <span><%= link "Exibir", to: Routes.lancamento_path(@conn, :show, lancamento) %></span>
+        <span><%= link "Editar", to: Routes.lancamento_path(@conn, :edit, lancamento) %></span>
+        <span><%= link "Deletar", to: Routes.lancamento_path(@conn, :delete, lancamento), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "Novo Lançamento", to: Routes.lancamento_path(@conn, :new) %></span>

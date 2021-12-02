@@ -1,0 +1,23 @@
+<h1>Detalhes</h1>
+
+<ul>
+
+  <li>
+    <strong>Tipo:</strong>
+    <%= @lancamento.tipo %>
+  </li>
+
+  <li>
+    <strong>Descricao:</strong>
+    <%= @lancamento.descricao %>
+  </li>
+
+  <li>
+    <strong>Valor:</strong>
+    <%= @lancamento.valor %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.lancamento_path(@conn, :edit, @lancamento) %></span> |
+<span><%= link "Back", to: Routes.lancamento_path(@conn, :index) %></span>
